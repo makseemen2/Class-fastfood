@@ -1,0 +1,29 @@
+class FastFood(object):
+
+    company_name = "phastphoot"
+    locations = []
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    @staticmethod
+    def get_company_name():
+        return FastFood.company_name
+
+    def get_discounted_price(self, discount):
+        return self.price * (1 - discount)
+
+    @staticmethod
+    def add_location(location):
+        FastFood.locations.append(location)
+
+    def print_order(self):
+        print(f"Order: {self.name} | Price: {self.price}")
+
+burger = FastFood("Cheeseburger", 3.99)
+print(burger.get_discounted_price(0.25)) 
+burger.print_order()  
+print(burger.get_company_name())
+
+FastFood.add_location("New York")
+print(FastFood.locations)  
